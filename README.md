@@ -135,6 +135,60 @@ I use 8 square corner velocity because I have found it to make corners slightly 
 
 ![](Images/AccelControls.png)  
 
+RRF Equivalent:
+; External perimeter
+{if extrusion_role=~/ExternalPerimeter/};[extrusion_role]
+M204 P1000
+
+; Perimeter
+{elsif extrusion_role=~/Perimeter/};[extrusion_role]
+M204 P2000
+
+; Overhang perimeter
+{elsif extrusion_role=~/OverhangPerimeter/};[extrusion_role]
+M204 P2000
+
+; Internal infill
+{elsif extrusion_role=~/InternalInfill/};[extrusion_role]
+M204 P7000
+
+; Top solid infill
+{elsif extrusion_role=~/TopSolidInfill/};[extrusion_role]
+M204 P2000
+
+; Solid infill
+{elsif extrusion_role=~/SolidInfill/};[extrusion_role]
+M204 P4000
+
+; Bridge infill
+{elsif extrusion_role=~/BridgeInfill/};[extrusion_role]
+M204 P5000
+
+; Gap fill
+{elsif extrusion_role=~/GapFill/};[extrusion_role]
+M204 P2000
+
+; Skirt
+{elsif extrusion_role=~/Skirt/};[extrusion_role]
+M204 P7000
+
+; Support material
+{elsif extrusion_role=~/SupportMaterial/};[extrusion_role]
+M204 P7000
+
+; Support material interface
+{elsif extrusion_role=~/SupportMaterialInterface/};[extrusion_role]
+M204 P7000
+
+; Thin walls
+{elsif extrusion_role=~/ThinWall/};[extrusion_role]
+M204 P2000 
+
+; Other
+{else};[extrusion_role]
+SET_VELOCITY_LIMIT ACCEL=4444 ACCEL_TO_DECEL=4444 SQUARE_CORNER_VELOCITY=8
+{endif}
+
 ## Bulging from High Accelerations
 
 I am still not 100% sure if this was only a "me" problem, but thought I would include it anyway.
