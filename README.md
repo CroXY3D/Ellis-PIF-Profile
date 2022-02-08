@@ -105,6 +105,8 @@ Select the **\.ini** file.
 # Volumetric Speed / Auto Speed
 **(!) It is very important that you update the volumetric speed setting, otherwise you may have extruder skipping and/or grinding.**
 
+MicroXY: 45 - Dragon HF + 0.6CHT
+
 These bottom two settings in this screenshot serve as universal "speed limits". No matter how much you push speeds, layer heights, or line widths, it will never allow you to exceed these thresholds.
 
 This is important because I keep my infill speed set to 0. This means it will print infill **as fast as the hotend will allow**, or up to the 300mm/sec, whichever comes first.
