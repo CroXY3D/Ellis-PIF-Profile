@@ -136,7 +136,7 @@ I use 8 square corner velocity because I have found it to make corners slightly 
 ![](Images/AccelControls.png)  
 
 RRF Equivalent:
-'''; External perimeter
+```; External perimeter
 {if extrusion_role=~/ExternalPerimeter/};[extrusion_role]
 M204 P1000
 
@@ -188,7 +188,7 @@ M204 P2000
 {else};[extrusion_role]
 SET_VELOCITY_LIMIT ACCEL=4444 ACCEL_TO_DECEL=4444 SQUARE_CORNER_VELOCITY=8
 {endif}
-'''
+```
 
 ## Bulging from High Accelerations
 
